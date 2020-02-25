@@ -1,18 +1,19 @@
 pragma solidity ^0.5.0;
 
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "@credit-contract/contracts/EER2B.sol";
+import '@openzeppelin/contracts/token/ERC20/IERC20.sol';
+import '@credit-contract/contracts/EER2B.sol';
+
 
 contract ERC20Adaptor is IERC20 {
     // library was imported in EER-2 contract
     using SafeMath for uint256;
     EER2B private credit;
     uint256 typeID;
-    mapping (address => mapping (address => uint256)) private allowances;
+    mapping(address => mapping(address => uint256)) private allowances;
 
-    constructor (address _creditAddr, uint256 _typeID) public {
+    constructor(address _creditAddr, uint256 _typeID) public {
         credit = EER2B(_creditAddr);
-        require(credit.isFungible(_typeID), "ERC20Adaptor: the credit is not fungible credit type");
+        require(credit.isFungible(_typeID), 'ERC20Adaptor: the credit is not fungible credit type');
         typeID = _typeID;
     }
 
@@ -89,8 +90,8 @@ contract ERC20Adaptor is IERC20 {
      * - `spender` cannot be the zero address.
      */
     function _approve(address owner, address spender, uint256 amount) internal {
-        require(owner != address(0), "ERC20: approve from the zero address");
-        require(spender != address(0), "ERC20: approve to the zero address");
+        require(owner != address(0), 'ERC20: approve from the zero address');
+        require(spender != address(0), 'ERC20: approve to the zero address');
 
         allowances[owner][spender] = amount;
         emit Approval(owner, spender, amount);
@@ -107,7 +108,7 @@ contract ERC20Adaptor is IERC20 {
      * Requirements: see {EER2A-safeTransferFrom}
      */
     function _transfer(address _from, address _to, uint256 _value) internal {
-        credit.safeTransferFrom(_from, _to, typeID, _value, "0x0");
+        credit.safeTransferFrom(_from, _to, typeID, _value, '0x0');
         emit Transfer(_from, _to, _value);
     }
 }
