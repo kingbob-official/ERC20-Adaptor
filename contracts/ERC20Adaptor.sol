@@ -3,15 +3,16 @@ pragma solidity ^0.5.0;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@credit-contract/contracts/EER2B.sol";
 
-// using SafeMath for uint256, library was imported in EER2A contract
 contract ERC20Adaptor is IERC20 {
+    // library was imported in EER-2 contract
     using SafeMath for uint256;
-    EER2B private creditContract;
+    EER2B private credit;
     uint256 typeID;
     mapping (address => mapping (address => uint256)) private allowances;
 
-    constructor (address _creditContractAddress, uint256 _typeID) public {
-        creditContract = EER2B(_creditContractAddress);
+    constructor (address _creditAddr, uint256 _typeID) public {
+        credit = EER2B(_creditAddr);
+        require(credit.isFungible(_typeID), "ERC20Adaptor: the credit is not fungible credit type");
         typeID = _typeID;
     }
 
@@ -19,14 +20,14 @@ contract ERC20Adaptor is IERC20 {
      * @dev See {IERC20-totalSupply}.
      */
     function totalSupply() external view returns (uint256) {
-        return creditContract.totalSupply(typeID);
+        return credit.totalSupply(typeID);
     }
 
     /**
      * @dev See {IERC20-balanceOf}.
      */
     function balanceOf(address account) external view returns (uint256) {
-        return creditContract.balanceOf(account, typeID);
+        return credit.balanceOf(account, typeID);
     }
 
     /**
@@ -106,7 +107,7 @@ contract ERC20Adaptor is IERC20 {
      * Requirements: see {EER2A-safeTransferFrom}
      */
     function _transfer(address _from, address _to, uint256 _value) internal {
-        creditContract.safeTransferFrom(_from, _to, typeID, _value, "0x0");
+        credit.safeTransferFrom(_from, _to, typeID, _value, "0x0");
         emit Transfer(_from, _to, _value);
     }
 }
