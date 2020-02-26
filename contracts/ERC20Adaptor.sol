@@ -8,7 +8,7 @@ contract ERC20Adaptor is IERC20 {
     // library was imported in EER-2 contract
     using SafeMath for uint256;
     EER2B private credit;
-    uint256 typeID;
+    uint256 public typeID;
     mapping(address => mapping(address => uint256)) private allowances;
 
     constructor(address _creditAddr, uint256 _typeID) public {

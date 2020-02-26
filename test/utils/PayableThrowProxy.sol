@@ -14,7 +14,7 @@ contract PayableThrowProxy is ThrowProxy, IEER2TokenReceiver {
         bytes _data
     );
 
-    constructor(address _target) public ThrowProxy(_target) {}
+    constructor() public ThrowProxy() {}
 
     /////////////////////////////////////////// IEER2TokenReceiver //////////////////////////////////////////////
 
