@@ -24,7 +24,7 @@ contract TestBalanceOf {
         tos[0] = fooAccount;
         values[0] = expectedAmount;
 
-        Assert.equal(adaptor.balanceOf(fooAccount),      0,        "account balance should be zero");
+        Assert.equal(adaptor.balanceOf(fooAccount), 0, "account balance should be zero");
 
         credit.mintFungible(typeID, tos, values);
         Assert.equal(adaptor.balanceOf(fooAccount), expectedAmount, "account balance should be increased equal to the minted amount");
