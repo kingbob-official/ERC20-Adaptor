@@ -15,8 +15,8 @@ contract AdaptorWrapper is ERC20Adaptor {
 
 contract TestApprove {
     ThrowProxy private throwProxy = new ThrowProxy();
-    address fooAddress;
-    address barAddress = address(1);
+    address private fooAddress;
+    address private barAddress = address(1);
 
     AdaptorWrapper private adaptor;
     address private adaptorAddress;

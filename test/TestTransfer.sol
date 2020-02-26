@@ -16,17 +16,16 @@ contract AdaptorWrapper is ERC20Adaptor {
 
 contract TestTransfer {
     PayableThrowProxy private throwProxy = new PayableThrowProxy();
-
-    uint256 private typeID;
-    AdaptorWrapper adaptor;
-    address private adaptorAddress;
     address private fooAddress;
     address private barAddress = address(1);
+
+    AdaptorWrapper private adaptor;
+    address private adaptorAddress;
 
     function beforeAll() external {
         EER2B credit = new EER2B();
         address creditAddress = address(credit);
-        typeID = credit.create("", false);
+        uint256 typeID = credit.create("", false);
 
         adaptor = new AdaptorWrapper(creditAddress, typeID);
         adaptorAddress = address(adaptor);
