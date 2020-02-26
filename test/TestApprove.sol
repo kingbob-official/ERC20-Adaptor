@@ -34,4 +34,14 @@ contract TestApprove {
         Assert.isTrue(success, "should not throw error approve credit to operator account");
         Assert.equal(adaptor.allowance(ownerAccount, operatorAccount), approvedAmount, "should equal to the approved amount");
     }
+
+    function testErrorApproveToZeroAddress() external{
+        uint256 approvedAmount = 100;
+        address zeroAddress = address(0);
+        Assert.isZero(adaptor.allowance(ownerAccount, zeroAddress), "should not have allowances");
+
+        AdaptorWrapper(ownerAccount).callApprove(zeroAddress, approvedAmount);
+        (bool success, ) = ownerAccountProxy.execute(adaptorAccount);
+        Assert.isFalse(success, "should throw error approve credit to zero address");
+    }
 }
