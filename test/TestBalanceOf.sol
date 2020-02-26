@@ -18,15 +18,15 @@ contract TestBalanceOf {
 
     function testBalanceOf() external{
         uint256 expectedAmount = 1000;
-        address fooAddress = address(1);
+        address fooAccount = address(1);
         address[] memory tos = new address[](1);
         uint256[] memory values = new uint256[](1);
-        tos[0] = fooAddress;
+        tos[0] = fooAccount;
         values[0] = expectedAmount;
 
-        Assert.equal(adaptor.balanceOf(fooAddress),      0,        "account balance should be zero");
+        Assert.equal(adaptor.balanceOf(fooAccount),      0,        "account balance should be zero");
 
         credit.mintFungible(typeID, tos, values);
-        Assert.equal(adaptor.balanceOf(fooAddress), expectedAmount, "account balance should be increased equal to the minted amount");
+        Assert.equal(adaptor.balanceOf(fooAccount), expectedAmount, "account balance should be increased equal to the minted amount");
     }
 }

@@ -18,10 +18,10 @@ contract TestTotalSupply {
 
     function testTotalSupply() external{
         uint256 expectedAmount = 1000;
-        address fooAddress = address(1);
+        address fooAccount = address(1);
         address[] memory tos = new address[](1);
         uint256[] memory values = new uint256[](1);
-        tos[0] = fooAddress;
+        tos[0] = fooAccount;
         values[0] = expectedAmount;
 
         Assert.equal(adaptor.totalSupply(), 0, "total supply should be zero");

@@ -6,23 +6,23 @@ import "@credit-contract/contracts/EER2B.sol";
 import "truffle/Assert.sol";
 
 contract AdaptorFactory {
-    address creditAddr;
+    address creditAccount;
 
-    constructor (address _creditAddr) public {
-        creditAddr = _creditAddr;
+    constructor (address _creditAccount) public {
+        creditAccount = _creditAccount;
     }
 
     function newAdaptor(uint256 _typeID) external{
-        new ERC20Adaptor(creditAddr, _typeID);
+        new ERC20Adaptor(creditAccount, _typeID);
     }
 }
 
 contract TestDeployment {
     uint256 private fungibleCreditTypeID;
     uint256 private nonFungibleCreditTypeID;
-    address private factoryAddress;
+    address private factoryAccount;
 
-    ThrowProxy private throwProxy = new ThrowProxy();
+    ThrowProxy private creatorAccount = new ThrowProxy();
 
     function beforeAll() external {
         EER2B credit = new EER2B();
@@ -30,18 +30,18 @@ contract TestDeployment {
         nonFungibleCreditTypeID = credit.create("", true);
 
         AdaptorFactory factory = new AdaptorFactory(address(credit));
-        factoryAddress = address(factory);
+        factoryAccount = address(factory);
     }
 
     function testDeploySuccess() external{
-        AdaptorFactory(address(throwProxy)).newAdaptor(fungibleCreditTypeID);
-        (bool success, ) = throwProxy.execute(factoryAddress);
+        AdaptorFactory(address(creatorAccount)).newAdaptor(fungibleCreditTypeID);
+        (bool success, ) = creatorAccount.execute(factoryAccount);
         Assert.isTrue(success, "should not throw error");
     }
 
     function testDeployError() external{
-        AdaptorFactory(address(throwProxy)).newAdaptor(nonFungibleCreditTypeID);
-        (bool success, ) = throwProxy.execute(factoryAddress);
+        AdaptorFactory(address(creatorAccount)).newAdaptor(nonFungibleCreditTypeID);
+        (bool success, ) = creatorAccount.execute(factoryAccount);
         Assert.isFalse(success, "should throw error");
     }
 }
