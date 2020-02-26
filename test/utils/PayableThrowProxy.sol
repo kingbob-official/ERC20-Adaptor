@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
-import '@credit-contract/contracts/IEER2TokenReceiver.sol';
-import './ThrowProxy.sol';
+import "@credit-contract/contracts/IEER2TokenReceiver.sol";
+import "./ThrowProxy.sol";
 
 
 contract PayableThrowProxy is ThrowProxy, IEER2TokenReceiver {

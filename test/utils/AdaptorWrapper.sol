@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
-import '../../contracts/ERC20Adaptor.sol';
-import 'truffle/Assert.sol';
+import "../../contracts/ERC20Adaptor.sol";
+import "truffle/Assert.sol";
 
 
 contract AdaptorWrapper is ERC20Adaptor {
@@ -22,6 +22,6 @@ contract AdaptorWrapper is ERC20Adaptor {
     }
 
     function callTransferFrom(address sender, address recipient, uint256 amount) external {
-        Assert.isTrue(transferFrom(sender, recipient, amount), 'transfer failed');
+        Assert.isTrue(transferFrom(sender, recipient, amount), "transfer failed");
     }
 }

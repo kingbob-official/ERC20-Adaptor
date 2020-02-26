@@ -22,7 +22,7 @@
     "truffle-assertions": "^0.9.2"
   },
   "scripts": {
-    "solhint": "./node_modules/.bin/solhint -f table contracts/**/*.sol",
+    "solhint": "./node_modules/.bin/solhint -f table contracts/**/*.sol && ./node_modules/.bin/solhint -f table test/**/*.sol",
     "prettier:solidity": "./node_modules/.bin/prettier --write contracts/**/*.sol && ./node_modules/.bin/prettier --write test/**/*.sol "
   }
 }
