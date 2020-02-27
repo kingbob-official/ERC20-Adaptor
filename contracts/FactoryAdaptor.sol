@@ -14,6 +14,10 @@ contract FactoryAdaptor {
         creditAddr = _creditAddr;
     }
 
+    /**
+        @dev Factory contract deploys ERC20Adaptor contract 
+        @return ERC20Adaptor's address
+     */
     function deployToERC20Adaptor() public returns (address) {
         ERC20Adaptor erc20Adaptor = new ERC20Adaptor(creditAddr, creditTypeID);
         adaptorRegistry[creditTypeID] = address(erc20Adaptor);
