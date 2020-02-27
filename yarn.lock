@@ -18,7 +18,7 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@credit-contract@git+ssh://git@github.com:/Evrynetlabs/credit-contract", "credit-contract@git+ssh://git@github.com:/Evrynetlabs/credit-contract":
+"credit-contract@git+ssh://git@github.com:/Evrynetlabs/credit-contract":
   version "1.0.0"
   resolved "git+ssh://git@github.com:/Evrynetlabs/credit-contract#fb4583b88e5cb6b043a6253d1aea11db90dd65f2"
   dependencies:
