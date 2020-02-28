@@ -22,8 +22,8 @@ contract TestFactoryAdaptor {
     }
 
     function testDeploySuccess() external {
-        FactoryAdaptor factoryAdaptor = new FactoryAdaptor(creditAddr, fungibleCreditTypeID);
-        address factoryAdaptorAddr = factoryAdaptor.deployToERC20Adaptor();
+        FactoryAdaptor factoryAdaptor = new FactoryAdaptor(creditAddr);
+        address factoryAdaptorAddr = factoryAdaptor.deployToERC20Adaptor(fungibleCreditTypeID);
         Assert.equal(
             factoryAdaptorAddr,
             factoryAdaptor.adaptorRegistry(fungibleCreditTypeID),
@@ -32,11 +32,10 @@ contract TestFactoryAdaptor {
     }
 
     function testDeployError() external {
-        FactoryAdaptor factoryAdaptor = new FactoryAdaptorWrapper(
-            creditAddr,
+        FactoryAdaptor factoryAdaptor = new FactoryAdaptorWrapper(creditAddr);
+        FactoryAdaptorWrapper(address(creatorAccount)).callDeployToERC20Adaptor(
             nonFungibleCreditTypeID
         );
-        FactoryAdaptorWrapper(address(creatorAccount)).callDeployToERC20Adaptor();
         (bool success, ) = creatorAccount.execute(address(factoryAdaptor));
         Assert.isFalse(success, "should throw error");
     }
