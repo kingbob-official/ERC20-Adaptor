@@ -18,11 +18,9 @@ contract ERC20AdaptorFactory {
         @return ERC20Adaptor's address
      */
     function deployAdaptor(uint256 _creditTypeID) public returns (address) {
-        if (adaptorRegistry[_creditTypeID] != address(0)) {
-            return adaptorRegistry[_creditTypeID];
+        if (adaptorRegistry[_creditTypeID] == address(0)) {
+            adaptorRegistry[_creditTypeID] = address(new ERC20Adaptor(creditAddr, _creditTypeID));
         }
-        ERC20Adaptor erc20Adaptor = new ERC20Adaptor(creditAddr, _creditTypeID);
-        adaptorRegistry[_creditTypeID] = address(erc20Adaptor);
         return adaptorRegistry[_creditTypeID];
     }
 }
