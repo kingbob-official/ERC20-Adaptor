@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
 import "./../contracts/ERC20Adaptor.sol";
-import "credit-contract/contracts/EER2B.sol";
+import "@Evrynetlabs/credit-contract/contracts/EER2B.sol";
 import "truffle/Assert.sol";
 
 contract TestBalanceOf {

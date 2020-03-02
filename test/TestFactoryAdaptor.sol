@@ -1,10 +1,10 @@
 pragma solidity ^0.5.0;
 
-import "./../contracts/FactoryAdaptor.sol";
+import "./../contracts/ERC20AdaptorFactory.sol";
 import "./utils/FactoryAdaptorWrapper.sol";
 import "./utils/ThrowProxy.sol";
 import "truffle/Assert.sol";
-import "credit-contract/contracts/EER2B.sol";
+import "@Evrynetlabs/credit-contract/contracts/EER2B.sol";
 
 contract TestFactoryAdaptor {
     uint256 private fungibleCreditTypeID;
@@ -22,8 +22,8 @@ contract TestFactoryAdaptor {
     }
 
     function testDeploySuccess() external {
-        FactoryAdaptor factoryAdaptor = new FactoryAdaptor(creditAddr);
-        address factoryAdaptorAddr = factoryAdaptor.deployToERC20Adaptor(fungibleCreditTypeID);
+        ERC20AdaptorFactory factoryAdaptor = new ERC20AdaptorFactory(creditAddr);
+        address factoryAdaptorAddr = factoryAdaptor.deployAdaptor(fungibleCreditTypeID);
         Assert.equal(
             factoryAdaptorAddr,
             factoryAdaptor.adaptorRegistry(fungibleCreditTypeID),
@@ -31,12 +31,21 @@ contract TestFactoryAdaptor {
         );
     }
 
-    function testDeployError() external {
-        FactoryAdaptor factoryAdaptor = new FactoryAdaptorWrapper(creditAddr);
-        FactoryAdaptorWrapper(address(creatorAccount)).callDeployToERC20Adaptor(
-            nonFungibleCreditTypeID
-        );
+    function testDeployErrorWithNonFungibleCreditType() external {
+        ERC20AdaptorFactory factoryAdaptor = new FactoryAdaptorWrapper(creditAddr);
+        FactoryAdaptorWrapper(address(creatorAccount)).callDeployAdaptor(nonFungibleCreditTypeID);
         (bool success, ) = creatorAccount.execute(address(factoryAdaptor));
+        Assert.isFalse(success, "should throw error");
+    }
+
+    function testDeployErrorWihDeploySameFungibleCreditType() external {
+        ERC20AdaptorFactory factoryAdaptor = new FactoryAdaptorWrapper(creditAddr);
+        FactoryAdaptorWrapper(address(creatorAccount)).callDeployAdaptor(fungibleCreditTypeID);
+        (bool success, ) = creatorAccount.execute(address(factoryAdaptor));
+        Assert.isTrue(success, "should not throw error");
+
+        FactoryAdaptorWrapper(address(creatorAccount)).callDeployAdaptor(fungibleCreditTypeID);
+        (success, ) = creatorAccount.execute(address(factoryAdaptor));
         Assert.isFalse(success, "should throw error");
     }
 }

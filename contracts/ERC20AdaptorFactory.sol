@@ -1,9 +1,9 @@
 pragma solidity ^0.5.0;
 
 import "./ERC20Adaptor.sol";
-import "credit-contract/contracts/EER2B.sol";
+import "@Evrynetlabs/credit-contract/contracts/EER2B.sol";
 
-contract FactoryAdaptor {
+contract ERC20AdaptorFactory {
     address private creditAddr;
 
     mapping(uint256 => address) public adaptorRegistry;
@@ -17,7 +17,11 @@ contract FactoryAdaptor {
         @param _creditTypeID The type id of credit 
         @return ERC20Adaptor's address
      */
-    function deployToERC20Adaptor(uint256 _creditTypeID) public returns (address) {
+    function deployAdaptor(uint256 _creditTypeID) public returns (address) {
+        require(
+            adaptorRegistry[_creditTypeID] == address(0),
+            "ERC20AdaptorFactory: cannot deploy the credit type id that has already deployed contract"
+        );
         ERC20Adaptor erc20Adaptor = new ERC20Adaptor(creditAddr, _creditTypeID);
         adaptorRegistry[_creditTypeID] = address(erc20Adaptor);
         return address(erc20Adaptor);

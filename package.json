@@ -11,8 +11,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@openzeppelin/contracts": "^2.5.0",
-    "credit-contract": "git+ssh://git@github.com:/Evrynetlabs/credit-contract"
+    "@Evrynetlabs/credit-contract": "git+ssh://git@github.com:/Evrynetlabs/credit-contract",
+    "@openzeppelin/contracts": "^2.5.0"
   },
   "devDependencies": {
     "prettier": "^1.19.1",
