@@ -18,12 +18,11 @@ contract ERC20AdaptorFactory {
         @return ERC20Adaptor's address
      */
     function deployAdaptor(uint256 _creditTypeID) public returns (address) {
-        require(
-            adaptorRegistry[_creditTypeID] == address(0),
-            "ERC20AdaptorFactory: cannot deploy the credit type id that has already deployed contract"
-        );
+        if (adaptorRegistry[_creditTypeID] != address(0)) {
+            return adaptorRegistry[_creditTypeID];
+        }
         ERC20Adaptor erc20Adaptor = new ERC20Adaptor(creditAddr, _creditTypeID);
         adaptorRegistry[_creditTypeID] = address(erc20Adaptor);
-        return address(erc20Adaptor);
+        return adaptorRegistry[_creditTypeID];
     }
 }
