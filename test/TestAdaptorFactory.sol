@@ -30,7 +30,6 @@ contract TestAdaptorFactory {
     }
 
     function testDeploySameTheFungibleCreditTypeIDTwiceTimes() external {
-        adaptorFactory = new ERC20AdaptorFactory(creditAddr);
         address fooFactoryAddr = adaptorFactory.deployAdaptor(fungibleCreditTypeID);
         address barFactoryAddr = adaptorFactory.deployAdaptor(fungibleCreditTypeID);
         Assert.equal(

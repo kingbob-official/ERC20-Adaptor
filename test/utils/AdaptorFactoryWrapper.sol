@@ -7,7 +7,6 @@ contract AdaptorFactoryWrapper is ERC20AdaptorFactory {
     constructor(address _creditAddr) public ERC20AdaptorFactory(_creditAddr) {}
 
     function callDeployAdaptor(uint256 _creditTypeID) public {
-        address addr = deployAdaptor(_creditTypeID);
-        Assert.isNotZero(addr, "should not return zero address");
+        Assert.isNotZero(deployAdaptor(_creditTypeID), "should not return zero address");
     }
 }
