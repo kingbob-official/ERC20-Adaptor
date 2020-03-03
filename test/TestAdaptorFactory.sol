@@ -20,19 +20,17 @@ contract TestAdaptorFactory {
         nonFungibleCreditTypeID = credit.create("", true);
 
         creditAddr = address(credit);
-        adaptorFactory = new ERC20AdaptorFactory(creditAddr);
+        adaptorFactory = new AdaptorFactoryWrapper(creditAddr);
     }
 
     function testDeploySuccess() external {
-        address adaptorAddr = adaptorFactory.deployAdaptor(fungibleCreditTypeID);
-        Assert.equal(
-            adaptorAddr,
-            adaptorFactory.adaptorRegistry(fungibleCreditTypeID),
-            "adaptor factory address should be equal to address which mapping by credit type id"
-        );
+        AdaptorFactoryWrapper(address(creatorAccount)).callDeployAdaptor(fungibleCreditTypeID);
+        (bool success, ) = creatorAccount.execute(address(adaptorFactory));
+        Assert.isTrue(success, "should not throw error");
     }
 
     function testDeploySameTheFungibleCreditTypeIDTwiceTimes() external {
+        adaptorFactory = new ERC20AdaptorFactory(creditAddr);
         address fooFactoryAddr = adaptorFactory.deployAdaptor(fungibleCreditTypeID);
         address barFactoryAddr = adaptorFactory.deployAdaptor(fungibleCreditTypeID);
         Assert.equal(
@@ -43,7 +41,6 @@ contract TestAdaptorFactory {
     }
 
     function testDeployErrorWithNonFungibleCreditType() external {
-        adaptorFactory = new AdaptorFactoryWrapper(creditAddr);
         AdaptorFactoryWrapper(address(creatorAccount)).callDeployAdaptor(nonFungibleCreditTypeID);
         (bool success, ) = creatorAccount.execute(address(adaptorFactory));
         Assert.isFalse(success, "should throw error");
