@@ -1,5 +1,3 @@
-
-
 # ERC20-Adaptor
 A proxy contract for ERC20 based DeFi to use EER2 function
 ## Installing / Getting started
@@ -16,16 +14,20 @@ You can compile and deploy this contract on [remix](https://remix.ethereum.org/#
 - Yarn [here](https://yarnpkg.com/)
 ### Setting up Dev
 ```
-yarn install
-npm install -g truffle 
-npm install solc@0.5.0 
+$ yarn install
+$ npm install -g truffle 
+$ npm install solc@0.5.0 
 ```
 ### Building
 Generate `truffle-config.js` first with run,
-> `truffle init`
+```
+$ truffle init
+````
 
 And build the contract
-> `truffle build`
+```
+$ truffle build
+```
 
 ## Versioning
 > `1.0.0`
