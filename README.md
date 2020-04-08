@@ -8,7 +8,7 @@ A proxy contract for ERC20 based DeFi to use EER2 function
 - [ERC-20](https://eips.ethereum.org/EIPS/eip-20)
 ### Prerequisites
 - Knowledge of EER-2 (Evrynet Enhancement Request) [here](https://github.com/evrynetlabs/credit-contract)
-- Installation truffle [Truffle network](https://www.trufflesuite.com/docs/truffle/getting-started/installation)
+- Installation truffle [here](https://www.trufflesuite.com/docs/truffle/getting-started/installation)
 ### Setting up Dev
 Run `npm install` in the root directory.
 ## Specification
