@@ -3,6 +3,7 @@ pragma solidity ^0.5.0;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@Evrynetlabs/credit-contract/contracts/EER2B.sol";
 
+
 contract ERC20Adaptor is IERC20 {
     // library was imported in EER-2 contract
     using SafeMath for uint256;
