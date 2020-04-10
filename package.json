@@ -5,6 +5,10 @@
     "/contracts/**/*",
     "/build/contracts/*"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Evrynetlabs/ERC20-Adaptor.git"
