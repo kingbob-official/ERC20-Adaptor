@@ -4,7 +4,7 @@ import "./../contracts/ERC20AdaptorFactory.sol";
 import "./utils/AdaptorFactoryWrapper.sol";
 import "./utils/ThrowProxy.sol";
 import "truffle/Assert.sol";
-import "@Evrynetlabs/credit-contract/contracts/EER2B.sol";
+import "@evrynetlabs/credit-contract/contracts/EER2B.sol";
 
 contract TestAdaptorFactory {
     uint256 private fungibleCreditTypeID;
