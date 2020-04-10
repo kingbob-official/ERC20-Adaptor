@@ -19,18 +19,12 @@ $ npm install -g solc@0.5.0
 $ yarn install
 ```
 ### Building
-Generate `truffle-config.js` first with run,
-```
-$ truffle init
-````
-
-And build the contract
 ```
 $ truffle build
 ```
 
 ## Versioning
-We use a SemVer for versioning. Please see the release.
+We use a [SemVer](https://semver.org/) for versioning. Please see the [release](https://github.com/Evrynetlabs/ERC20-Adaptor/releases).
 
 ## Specification
 ### Notes:
@@ -56,4 +50,4 @@ yarn run prettier:solidity
 ```
 
 ## Licensing
-ERC20 Adapter is licensed under the OSL Open Software License v3.0, also included in our repository in the LICENSE file.
+ERC20 Adapter is licensed under the [Open Software License ("OSL") v. 3.0](https://opensource.org/licenses/OSL-3.0), also included in our repository in the LICENSE file.
