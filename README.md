@@ -30,7 +30,8 @@ $ truffle build
 ```
 
 ## Versioning
-> `1.0.0`
+We use a SemVer for versioning. Please see the release.
+
 ## Specification
 ### Notes:
 - The following specifications use syntax from Solidity 0.5.0 (or above)
