@@ -14,9 +14,9 @@ You can compile and deploy this contract on [remix](https://remix.ethereum.org/#
 - Yarn [here](https://yarnpkg.com/)
 ### Setting up Dev
 ```
-$ yarn install
 $ npm install -g truffle 
-$ npm install solc@0.5.0 
+$ npm install -g solc@0.5.0 
+$ yarn install
 ```
 ### Building
 Generate `truffle-config.js` first with run,
@@ -48,7 +48,11 @@ Returns the ERC20Adapter address whch binds with credit type id
 Run `truffle test` to run the unit tests.
 
 ## Style guide
-Using solhint for coding style . Please see configuration on `solhint.json`
+We use the following command to maintain the formatting and linting.
+```
+yarn run solhint
+yarn run prettier:solidity
+```
 
 ## Licensing
 ERC20 Adapter is licensed under the OSL Open Software License v3.0, also included in our repository in the LICENSE file.
