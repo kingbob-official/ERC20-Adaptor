@@ -1,17 +1,21 @@
 {
-  "name": "@Evrynetlabs/ERC20-Adaptor",
-  "version": "1.0.0",
+  "name": "@evrynetlabs/ERC20-Adaptor",
+  "version": "1.0.1",
   "files": [
-    "/contracts/**/*.sol",
-    "/build/contracts/*.json"
+    "/contracts/**/*",
+    "/build/contracts/*"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/Evrynetlabs/ERC20-Adaptor.git"
   },
-  "license": "MIT",
+  "license": "OSL-3.0",
   "dependencies": {
-    "@Evrynetlabs/credit-contract": "git+ssh://git@github.com:/Evrynetlabs/credit-contract",
+    "@evrynetlabs/credit-contract": "1.1.2",
     "@openzeppelin/contracts": "2.3.0"
   },
   "devDependencies": {

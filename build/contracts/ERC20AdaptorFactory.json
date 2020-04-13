@@ -1,0 +1,1450 @@
+{
+  "contractName": "ERC20AdaptorFactory",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "adaptorRegistry",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "_creditAddr",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_creditTypeID",
+          "type": "uint256"
+        }
+      ],
+      "name": "deployAdaptor",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_creditTypeID\",\"type\":\"uint256\"}],\"name\":\"deployAdaptor\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"adaptorRegistry\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_creditAddr\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{\"deployAdaptor(uint256)\":{\"details\":\"Factory contract deploys ERC20Adaptor contract \",\"params\":{\"_creditTypeID\":\"The type id of credit \"},\"return\":\"ERC20Adaptor's address\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/100x/Evrynetlabs/ERC20-Adaptor/contracts/ERC20AdaptorFactory.sol\":\"ERC20AdaptorFactory\"},\"evmVersion\":\"constantinople\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/100x/Evrynetlabs/ERC20-Adaptor/contracts/ERC20Adaptor.sol\":{\"keccak256\":\"0xfa6775fa81873f9f40df17beda6d7b94aa673bec9880766a5c172830aaa90749\",\"urls\":[\"bzzr://74b518f30657347c904e62d26a573acc5db75b11eea4b9cf8745e11f013fed8e\"]},\"/Users/100x/Evrynetlabs/ERC20-Adaptor/contracts/ERC20AdaptorFactory.sol\":{\"keccak256\":\"0x4709cea9ca65be84c0ab514b9d204c21ac17c8512d27d244993d6a644de02376\",\"urls\":[\"bzzr://71f4c26d36c21982082f0643688282cf445837b615bed4a2e49389fe6517f38a\"]},\"@Evrynetlabs/credit-contract/contracts/EER2A.sol\":{\"keccak256\":\"0xf587547e337ca82e02112b697f9f6575fa2b216b1bdf99bc8f31301e37c9040f\",\"urls\":[\"bzzr://98cea014b451ffecaffd9067997955f5aa82e230c2147dbe8cad4fe1fe45b15a\"]},\"@Evrynetlabs/credit-contract/contracts/EER2B.sol\":{\"keccak256\":\"0xd8be5ffa39877c2bb907033c961a3cd297aeb9401bb4b11cdd7816427a85a2f5\",\"urls\":[\"bzzr://1b66a991c02ecd4a20a923dc05fc5560a27c37f20d9941d73ea3d4a6449f3764\"]},\"@Evrynetlabs/credit-contract/contracts/IEER2A.sol\":{\"keccak256\":\"0xa966511cbbb94eb21ae8b492f5189deb44d05827b73432bf46dd9e1a5260b4dc\",\"urls\":[\"bzzr://c878777f49799664ac6e583aacde59ea97e894f6a57c3822615f5f7ed8ee26d5\"]},\"@Evrynetlabs/credit-contract/contracts/IEER2B.sol\":{\"keccak256\":\"0xfea74ab98ddc2254ae89edd408586a0e8d855cef9ca46f116862ce85f069e214\",\"urls\":[\"bzzr://eac5d51e127ff328ef72b817b946202843d282c36ec49696fb24168d95ea08f3\"]},\"@Evrynetlabs/credit-contract/contracts/IEER2TokenReceiver.sol\":{\"keccak256\":\"0x788e5351918d81c8afe4465fcf2624947e7b2261d85f2f539fea413d85c9128e\",\"urls\":[\"bzzr://df72bbeb95755ea0298775633a45d7e78fffe3c619b2e168309f47d4cc8e07db\"]},\"@openzeppelin/contracts/math/SafeMath.sol\":{\"keccak256\":\"0xd1804d04fb39689453f673601429a99a0c68c422a981fc338773df9a59180fe9\",\"urls\":[\"bzzr://a7dfb6fc259d0074da840a848461487567e2a6309105dd5c050a4e025f0fa7cb\"]},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x90e8c2521653bbb1768b05889c5760031e688d9cd361f167489b89215e201b95\",\"urls\":[\"bzzr://aa8b45b57edafc3d67bc5d916327ea16807fae33f753ca163ae0c4061b789766\"]},\"@openzeppelin/contracts/utils/Address.sol\":{\"keccak256\":\"0xf3358e5819ca73357abd6c90bdfffd0474af54364897f6b3e3234c4b71fbe9a1\",\"urls\":[\"bzzr://f7f6da60a184233fd666ac44e6fb2bd51ca6ebdc4867a310d368049aa4e62786\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50604051602080610ab18339810180604052602081101561003057600080fd5b505160008054600160a060020a03909216600160a060020a0319909216919091179055610a4f806100626000396000f3fe60806040526004361061002f5760003560e01c63ffffffff16806338f8b41614610034578063f39f59be1461007a575b600080fd5b34801561004057600080fd5b5061005e6004803603602081101561005757600080fd5b50356100a4565b60408051600160a060020a039092168252519081900360200190f35b34801561008657600080fd5b5061005e6004803603602081101561009d57600080fd5b503561015f565b600081815260016020526040812054600160a060020a0316151561014357600054600160a060020a0316826100d761017a565b600160a060020a0390921682526020820152604080519182900301906000f080158015610108573d6000803e3d6000fd5b506000838152600160205260409020805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555b50600090815260016020526040902054600160a060020a031690565b600160205260009081526040902054600160a060020a031681565b6040516108998061018b8339019056fe608060405234801561001057600080fd5b506040516040806108998339810180604052604081101561003057600080fd5b50805160209182015160008054600160a060020a031916600160a060020a038085169190911791829055604080517fadebf6f200000000000000000000000000000000000000000000000000000000815260048101859052905194959394929091169263adebf6f292602480840193829003018186803b1580156100b357600080fd5b505afa1580156100c7573d6000803e3d6000fd5b505050506040513d60208110156100dd57600080fd5b5051151561017257604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603460248201527f455243323041646170746f723a2074686520637265646974206973206e6f742060448201527f66756e6769626c65206372656469742074797065000000000000000000000000606482015290519081900360840190fd5b60015550610714806101856000396000f3fe6080604052600436106100665760003560e01c63ffffffff168063095ea7b31461006b57806318160ddd146100b857806323b872dd146100df5780634c8435f21461012257806370a0823114610137578063a9059cbb1461016a578063dd62ed3e146101a3575b600080fd5b34801561007757600080fd5b506100a46004803603604081101561008e57600080fd5b50600160a060020a0381351690602001356101de565b604080519115158252519081900360200190f35b3480156100c457600080fd5b506100cd6101f4565b60408051918252519081900360200190f35b3480156100eb57600080fd5b506100a46004803603606081101561010257600080fd5b50600160a060020a0381358116916020810135909116906040013561028e565b34801561012e57600080fd5b506100cd6102e5565b34801561014357600080fd5b506100cd6004803603602081101561015a57600080fd5b5035600160a060020a03166102eb565b34801561017657600080fd5b506100a46004803603604081101561018d57600080fd5b50600160a060020a03813516906020013561038d565b3480156101af57600080fd5b506100cd600480360360408110156101c657600080fd5b50600160a060020a038135811691602001351661039a565b60006101eb3384846103c5565b50600192915050565b60008054600154604080517fbd85b039000000000000000000000000000000000000000000000000000000008152600481019290925251600160a060020a039092169163bd85b03991602480820192602092909190829003018186803b15801561025d57600080fd5b505afa158015610271573d6000803e3d6000fd5b505050506040513d602081101561028757600080fd5b5051905090565b600061029b848484610560565b600160a060020a0384166000908152600260209081526040808320338085529252909120546102db9186916102d6908663ffffffff61067116565b6103c5565b5060019392505050565b60015481565b60008054600154604080517efdd58e000000000000000000000000000000000000000000000000000000008152600160a060020a03868116600483015260248201939093529051919092169162fdd58e916044808301926020929190829003018186803b15801561035b57600080fd5b505afa15801561036f573d6000803e3d6000fd5b505050506040513d602081101561038557600080fd5b505192915050565b60006101eb338484610560565b600160a060020a03918216600090815260026020908152604080832093909416825291909152205490565b600160a060020a038316151561046157604080517f08c379a0000000000000000000000000000000000000000000000000000000008152602060048201526024808201527f45524332303a20617070726f76652066726f6d20746865207a65726f2061646460448201527f7265737300000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b600160a060020a03821615156104fe57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602260248201527f45524332303a20617070726f766520746f20746865207a65726f20616464726560448201527f7373000000000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b600160a060020a03808416600081815260026020908152604080832094871680845294825291829020859055815185815291517f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b9259281900390910190a3505050565b60008054600154604080517ff242432a000000000000000000000000000000000000000000000000000000008152600160a060020a038881166004830152878116602483015260448201939093526064810186905260a06084820152600360a48201527f307830000000000000000000000000000000000000000000000000000000000060c48201529051919092169263f242432a9260e4808201939182900301818387803b15801561061257600080fd5b505af1158015610626573d6000803e3d6000fd5b5050604080518481529051600160a060020a038087169450871692507fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9181900360200190a3505050565b6000828211156106e257604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601e60248201527f536166654d6174683a207375627472616374696f6e206f766572666c6f770000604482015290519081900360640190fd5b5090039056fea165627a7a723058206e55b3f3648985347c2716f6838fe74a0d3103fc7e8c807d0a9accc7bedf8fdc0029a165627a7a7230582048650f8a77cadac7915925a17039b74582d14018c325fc8b962b9d46f76a99af0029",
+  "deployedBytecode": "0x60806040526004361061002f5760003560e01c63ffffffff16806338f8b41614610034578063f39f59be1461007a575b600080fd5b34801561004057600080fd5b5061005e6004803603602081101561005757600080fd5b50356100a4565b60408051600160a060020a039092168252519081900360200190f35b34801561008657600080fd5b5061005e6004803603602081101561009d57600080fd5b503561015f565b600081815260016020526040812054600160a060020a0316151561014357600054600160a060020a0316826100d761017a565b600160a060020a0390921682526020820152604080519182900301906000f080158015610108573d6000803e3d6000fd5b506000838152600160205260409020805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a03929092169190911790555b50600090815260016020526040902054600160a060020a031690565b600160205260009081526040902054600160a060020a031681565b6040516108998061018b8339019056fe608060405234801561001057600080fd5b506040516040806108998339810180604052604081101561003057600080fd5b50805160209182015160008054600160a060020a031916600160a060020a038085169190911791829055604080517fadebf6f200000000000000000000000000000000000000000000000000000000815260048101859052905194959394929091169263adebf6f292602480840193829003018186803b1580156100b357600080fd5b505afa1580156100c7573d6000803e3d6000fd5b505050506040513d60208110156100dd57600080fd5b5051151561017257604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152603460248201527f455243323041646170746f723a2074686520637265646974206973206e6f742060448201527f66756e6769626c65206372656469742074797065000000000000000000000000606482015290519081900360840190fd5b60015550610714806101856000396000f3fe6080604052600436106100665760003560e01c63ffffffff168063095ea7b31461006b57806318160ddd146100b857806323b872dd146100df5780634c8435f21461012257806370a0823114610137578063a9059cbb1461016a578063dd62ed3e146101a3575b600080fd5b34801561007757600080fd5b506100a46004803603604081101561008e57600080fd5b50600160a060020a0381351690602001356101de565b604080519115158252519081900360200190f35b3480156100c457600080fd5b506100cd6101f4565b60408051918252519081900360200190f35b3480156100eb57600080fd5b506100a46004803603606081101561010257600080fd5b50600160a060020a0381358116916020810135909116906040013561028e565b34801561012e57600080fd5b506100cd6102e5565b34801561014357600080fd5b506100cd6004803603602081101561015a57600080fd5b5035600160a060020a03166102eb565b34801561017657600080fd5b506100a46004803603604081101561018d57600080fd5b50600160a060020a03813516906020013561038d565b3480156101af57600080fd5b506100cd600480360360408110156101c657600080fd5b50600160a060020a038135811691602001351661039a565b60006101eb3384846103c5565b50600192915050565b60008054600154604080517fbd85b039000000000000000000000000000000000000000000000000000000008152600481019290925251600160a060020a039092169163bd85b03991602480820192602092909190829003018186803b15801561025d57600080fd5b505afa158015610271573d6000803e3d6000fd5b505050506040513d602081101561028757600080fd5b5051905090565b600061029b848484610560565b600160a060020a0384166000908152600260209081526040808320338085529252909120546102db9186916102d6908663ffffffff61067116565b6103c5565b5060019392505050565b60015481565b60008054600154604080517efdd58e000000000000000000000000000000000000000000000000000000008152600160a060020a03868116600483015260248201939093529051919092169162fdd58e916044808301926020929190829003018186803b15801561035b57600080fd5b505afa15801561036f573d6000803e3d6000fd5b505050506040513d602081101561038557600080fd5b505192915050565b60006101eb338484610560565b600160a060020a03918216600090815260026020908152604080832093909416825291909152205490565b600160a060020a038316151561046157604080517f08c379a0000000000000000000000000000000000000000000000000000000008152602060048201526024808201527f45524332303a20617070726f76652066726f6d20746865207a65726f2061646460448201527f7265737300000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b600160a060020a03821615156104fe57604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152602260248201527f45524332303a20617070726f766520746f20746865207a65726f20616464726560448201527f7373000000000000000000000000000000000000000000000000000000000000606482015290519081900360840190fd5b600160a060020a03808416600081815260026020908152604080832094871680845294825291829020859055815185815291517f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b9259281900390910190a3505050565b60008054600154604080517ff242432a000000000000000000000000000000000000000000000000000000008152600160a060020a038881166004830152878116602483015260448201939093526064810186905260a06084820152600360a48201527f307830000000000000000000000000000000000000000000000000000000000060c48201529051919092169263f242432a9260e4808201939182900301818387803b15801561061257600080fd5b505af1158015610626573d6000803e3d6000fd5b5050604080518481529051600160a060020a038087169450871692507fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9181900360200190a3505050565b6000828211156106e257604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601e60248201527f536166654d6174683a207375627472616374696f6e206f766572666c6f770000604482015290519081900360640190fd5b5090039056fea165627a7a723058206e55b3f3648985347c2716f6838fe74a0d3103fc7e8c807d0a9accc7bedf8fdc0029a165627a7a7230582048650f8a77cadac7915925a17039b74582d14018c325fc8b962b9d46f76a99af0029",
+  "sourceMap": "115:676:1:-;;;240:81;8:9:-1;5:2;;;30:1;27;20:12;5:2;240:81:1;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;240:81:1;290:10;:24;;-1:-1:-1;;;;;290:24:1;;;-1:-1:-1;;;;;;290:24:1;;;;;;;;;115:676;;;;;;",
+  "deployedSourceMap": "115:676:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;495:294;;8:9:-1;5:2;;;30:1;27;20:12;5:2;495:294:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;495:294:1;;;;;;;-1:-1:-1;;;;;495:294:1;;;;;;;;;;;;;;183:50;;8:9:-1;5:2;;;30:1;27;20:12;5:2;183:50:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;183:50:1;;;495:294;557:7;580:30;;;:15;:30;;;;;;-1:-1:-1;;;;;580:30:1;:44;576:160;;;698:10;;-1:-1:-1;;;;;698:10:1;710:13;681:43;;:::i;:::-;-1:-1:-1;;;;;681:43:1;;;;;;;;;;;;;;;;;;-1:-1:-1;681:43:1;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;640:30:1;;;;:15;:30;;;;;:85;;-1:-1:-1;;640:85:1;-1:-1:-1;;;;;640:85:1;;;;;;;;;;576:160;-1:-1:-1;752:30:1;;;;:15;:30;;;;;;-1:-1:-1;;;;;752:30:1;;495:294::o;183:50::-;;;;;;;;;;;;-1:-1:-1;;;;;183:50:1;;:::o;115:676::-;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\n\nimport \"./ERC20Adaptor.sol\";\nimport \"@Evrynetlabs/credit-contract/contracts/EER2B.sol\";\n\n\ncontract ERC20AdaptorFactory {\n    address private creditAddr;\n\n    mapping(uint256 => address) public adaptorRegistry;\n\n    constructor(address _creditAddr) public {\n        creditAddr = _creditAddr;\n    }\n\n    /**\n        @dev Factory contract deploys ERC20Adaptor contract \n        @param _creditTypeID The type id of credit \n        @return ERC20Adaptor's address\n     */\n    function deployAdaptor(uint256 _creditTypeID) public returns (address) {\n        if (adaptorRegistry[_creditTypeID] == address(0)) {\n            adaptorRegistry[_creditTypeID] = address(new ERC20Adaptor(creditAddr, _creditTypeID));\n        }\n        return adaptorRegistry[_creditTypeID];\n    }\n}\n",
+  "sourcePath": "/Users/100x/Evrynetlabs/ERC20-Adaptor/contracts/ERC20AdaptorFactory.sol",
+  "ast": {
+    "absolutePath": "/Users/100x/Evrynetlabs/ERC20-Adaptor/contracts/ERC20AdaptorFactory.sol",
+    "exportedSymbols": {
+      "ERC20AdaptorFactory": [
+        281
+      ]
+    },
+    "id": 282,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 229,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "/Users/100x/Evrynetlabs/ERC20-Adaptor/contracts/ERC20Adaptor.sol",
+        "file": "./ERC20Adaptor.sol",
+        "id": 230,
+        "nodeType": "ImportDirective",
+        "scope": 282,
+        "sourceUnit": 228,
+        "src": "25:28:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@Evrynetlabs/credit-contract/contracts/EER2B.sol",
+        "file": "@Evrynetlabs/credit-contract/contracts/EER2B.sol",
+        "id": 231,
+        "nodeType": "ImportDirective",
+        "scope": 282,
+        "sourceUnit": 1801,
+        "src": "54:58:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          227
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 281,
+        "linearizedBaseContracts": [
+          281
+        ],
+        "name": "ERC20AdaptorFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 233,
+            "name": "creditAddr",
+            "nodeType": "VariableDeclaration",
+            "scope": 281,
+            "src": "150:26:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 232,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "150:7:1",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 237,
+            "name": "adaptorRegistry",
+            "nodeType": "VariableDeclaration",
+            "scope": 281,
+            "src": "183:50:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+              "typeString": "mapping(uint256 => address)"
+            },
+            "typeName": {
+              "id": 236,
+              "keyType": {
+                "id": 234,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "191:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "183:27:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                "typeString": "mapping(uint256 => address)"
+              },
+              "valueType": {
+                "id": 235,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "202:7:1",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 246,
+              "nodeType": "Block",
+              "src": "280:41:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 244,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 242,
+                      "name": "creditAddr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 233,
+                      "src": "290:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 243,
+                      "name": "_creditAddr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 239,
+                      "src": "303:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "290:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 245,
+                  "nodeType": "ExpressionStatement",
+                  "src": "290:24:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 247,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 240,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 239,
+                  "name": "_creditAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 247,
+                  "src": "252:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 238,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "252:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "251:21:1"
+            },
+            "returnParameters": {
+              "id": 241,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "280:0:1"
+            },
+            "scope": 281,
+            "src": "240:81:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 279,
+              "nodeType": "Block",
+              "src": "566:223:1",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "id": 260,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 254,
+                        "name": "adaptorRegistry",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 237,
+                        "src": "580:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                          "typeString": "mapping(uint256 => address)"
+                        }
+                      },
+                      "id": 256,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 255,
+                        "name": "_creditTypeID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 249,
+                        "src": "596:13:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "580:30:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 258,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "622:1:1",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 257,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "614:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 259,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "614:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "580:44:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 274,
+                  "nodeType": "IfStatement",
+                  "src": "576:160:1",
+                  "trueBody": {
+                    "id": 273,
+                    "nodeType": "Block",
+                    "src": "626:110:1",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 271,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 261,
+                              "name": "adaptorRegistry",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 237,
+                              "src": "640:15:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                                "typeString": "mapping(uint256 => address)"
+                              }
+                            },
+                            "id": 263,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 262,
+                              "name": "_creditTypeID",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 249,
+                              "src": "656:13:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "nodeType": "IndexAccess",
+                            "src": "640:30:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "arguments": [
+                                  {
+                                    "argumentTypes": null,
+                                    "id": 267,
+                                    "name": "creditAddr",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 233,
+                                    "src": "698:10:1",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  },
+                                  {
+                                    "argumentTypes": null,
+                                    "id": 268,
+                                    "name": "_creditTypeID",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 249,
+                                    "src": "710:13:1",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  ],
+                                  "id": 266,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "nodeType": "NewExpression",
+                                  "src": "681:16:1",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_uint256_$returns$_t_contract$_ERC20Adaptor_$227_$",
+                                    "typeString": "function (address,uint256) returns (contract ERC20Adaptor)"
+                                  },
+                                  "typeName": {
+                                    "contractScope": null,
+                                    "id": 265,
+                                    "name": "ERC20Adaptor",
+                                    "nodeType": "UserDefinedTypeName",
+                                    "referencedDeclaration": 227,
+                                    "src": "685:12:1",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_contract$_ERC20Adaptor_$227",
+                                      "typeString": "contract ERC20Adaptor"
+                                    }
+                                  }
+                                },
+                                "id": 269,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "functionCall",
+                                "lValueRequested": false,
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "681:43:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_ERC20Adaptor_$227",
+                                  "typeString": "contract ERC20Adaptor"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_ERC20Adaptor_$227",
+                                  "typeString": "contract ERC20Adaptor"
+                                }
+                              ],
+                              "id": 264,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "ElementaryTypeNameExpression",
+                              "src": "673:7:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_address_$",
+                                "typeString": "type(address)"
+                              },
+                              "typeName": "address"
+                            },
+                            "id": 270,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "673:52:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "640:85:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "id": 272,
+                        "nodeType": "ExpressionStatement",
+                        "src": "640:85:1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 275,
+                      "name": "adaptorRegistry",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 237,
+                      "src": "752:15:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                        "typeString": "mapping(uint256 => address)"
+                      }
+                    },
+                    "id": 277,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 276,
+                      "name": "_creditTypeID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 249,
+                      "src": "768:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "752:30:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 253,
+                  "id": 278,
+                  "nodeType": "Return",
+                  "src": "745:37:1"
+                }
+              ]
+            },
+            "documentation": "@dev Factory contract deploys ERC20Adaptor contract \n@param _creditTypeID The type id of credit \n@return ERC20Adaptor's address",
+            "id": 280,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deployAdaptor",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 250,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 249,
+                  "name": "_creditTypeID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 280,
+                  "src": "518:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 248,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "518:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "517:23:1"
+            },
+            "returnParameters": {
+              "id": 253,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 252,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 280,
+                  "src": "557:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 251,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "557:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "556:9:1"
+            },
+            "scope": 281,
+            "src": "495:294:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 282,
+        "src": "115:676:1"
+      }
+    ],
+    "src": "0:792:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/100x/Evrynetlabs/ERC20-Adaptor/contracts/ERC20AdaptorFactory.sol",
+    "exportedSymbols": {
+      "ERC20AdaptorFactory": [
+        281
+      ]
+    },
+    "id": 282,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 229,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "absolutePath": "/Users/100x/Evrynetlabs/ERC20-Adaptor/contracts/ERC20Adaptor.sol",
+        "file": "./ERC20Adaptor.sol",
+        "id": 230,
+        "nodeType": "ImportDirective",
+        "scope": 282,
+        "sourceUnit": 228,
+        "src": "25:28:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "@Evrynetlabs/credit-contract/contracts/EER2B.sol",
+        "file": "@Evrynetlabs/credit-contract/contracts/EER2B.sol",
+        "id": 231,
+        "nodeType": "ImportDirective",
+        "scope": 282,
+        "sourceUnit": 1801,
+        "src": "54:58:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [
+          227
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 281,
+        "linearizedBaseContracts": [
+          281
+        ],
+        "name": "ERC20AdaptorFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 233,
+            "name": "creditAddr",
+            "nodeType": "VariableDeclaration",
+            "scope": 281,
+            "src": "150:26:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 232,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "150:7:1",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 237,
+            "name": "adaptorRegistry",
+            "nodeType": "VariableDeclaration",
+            "scope": 281,
+            "src": "183:50:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+              "typeString": "mapping(uint256 => address)"
+            },
+            "typeName": {
+              "id": 236,
+              "keyType": {
+                "id": 234,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "191:7:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "183:27:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                "typeString": "mapping(uint256 => address)"
+              },
+              "valueType": {
+                "id": 235,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "202:7:1",
+                "stateMutability": "nonpayable",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 246,
+              "nodeType": "Block",
+              "src": "280:41:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 244,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 242,
+                      "name": "creditAddr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 233,
+                      "src": "290:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 243,
+                      "name": "_creditAddr",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 239,
+                      "src": "303:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "290:24:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 245,
+                  "nodeType": "ExpressionStatement",
+                  "src": "290:24:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 247,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 240,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 239,
+                  "name": "_creditAddr",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 247,
+                  "src": "252:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 238,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "252:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "251:21:1"
+            },
+            "returnParameters": {
+              "id": 241,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "280:0:1"
+            },
+            "scope": 281,
+            "src": "240:81:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 279,
+              "nodeType": "Block",
+              "src": "566:223:1",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    },
+                    "id": 260,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "baseExpression": {
+                        "argumentTypes": null,
+                        "id": 254,
+                        "name": "adaptorRegistry",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 237,
+                        "src": "580:15:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                          "typeString": "mapping(uint256 => address)"
+                        }
+                      },
+                      "id": 256,
+                      "indexExpression": {
+                        "argumentTypes": null,
+                        "id": 255,
+                        "name": "_creditTypeID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 249,
+                        "src": "596:13:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "580:30:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "arguments": [
+                        {
+                          "argumentTypes": null,
+                          "hexValue": "30",
+                          "id": 258,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "622:1:1",
+                          "subdenomination": null,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          },
+                          "value": "0"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_0_by_1",
+                            "typeString": "int_const 0"
+                          }
+                        ],
+                        "id": 257,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "ElementaryTypeNameExpression",
+                        "src": "614:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_address_$",
+                          "typeString": "type(address)"
+                        },
+                        "typeName": "address"
+                      },
+                      "id": 259,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "typeConversion",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "614:10:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "src": "580:44:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 274,
+                  "nodeType": "IfStatement",
+                  "src": "576:160:1",
+                  "trueBody": {
+                    "id": 273,
+                    "nodeType": "Block",
+                    "src": "626:110:1",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 271,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "id": 261,
+                              "name": "adaptorRegistry",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 237,
+                              "src": "640:15:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                                "typeString": "mapping(uint256 => address)"
+                              }
+                            },
+                            "id": 263,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "id": 262,
+                              "name": "_creditTypeID",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 249,
+                              "src": "656:13:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "nodeType": "IndexAccess",
+                            "src": "640:30:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "arguments": [
+                              {
+                                "argumentTypes": null,
+                                "arguments": [
+                                  {
+                                    "argumentTypes": null,
+                                    "id": 267,
+                                    "name": "creditAddr",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 233,
+                                    "src": "698:10:1",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    }
+                                  },
+                                  {
+                                    "argumentTypes": null,
+                                    "id": 268,
+                                    "name": "_creditTypeID",
+                                    "nodeType": "Identifier",
+                                    "overloadedDeclarations": [],
+                                    "referencedDeclaration": 249,
+                                    "src": "710:13:1",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  }
+                                ],
+                                "expression": {
+                                  "argumentTypes": [
+                                    {
+                                      "typeIdentifier": "t_address",
+                                      "typeString": "address"
+                                    },
+                                    {
+                                      "typeIdentifier": "t_uint256",
+                                      "typeString": "uint256"
+                                    }
+                                  ],
+                                  "id": 266,
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "nodeType": "NewExpression",
+                                  "src": "681:16:1",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_function_creation_nonpayable$_t_address_$_t_uint256_$returns$_t_contract$_ERC20Adaptor_$227_$",
+                                    "typeString": "function (address,uint256) returns (contract ERC20Adaptor)"
+                                  },
+                                  "typeName": {
+                                    "contractScope": null,
+                                    "id": 265,
+                                    "name": "ERC20Adaptor",
+                                    "nodeType": "UserDefinedTypeName",
+                                    "referencedDeclaration": 227,
+                                    "src": "685:12:1",
+                                    "typeDescriptions": {
+                                      "typeIdentifier": "t_contract$_ERC20Adaptor_$227",
+                                      "typeString": "contract ERC20Adaptor"
+                                    }
+                                  }
+                                },
+                                "id": 269,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": false,
+                                "kind": "functionCall",
+                                "lValueRequested": false,
+                                "names": [],
+                                "nodeType": "FunctionCall",
+                                "src": "681:43:1",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_ERC20Adaptor_$227",
+                                  "typeString": "contract ERC20Adaptor"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_ERC20Adaptor_$227",
+                                  "typeString": "contract ERC20Adaptor"
+                                }
+                              ],
+                              "id": 264,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "nodeType": "ElementaryTypeNameExpression",
+                              "src": "673:7:1",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_address_$",
+                                "typeString": "type(address)"
+                              },
+                              "typeName": "address"
+                            },
+                            "id": 270,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "typeConversion",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "673:52:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          },
+                          "src": "640:85:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_address",
+                            "typeString": "address"
+                          }
+                        },
+                        "id": 272,
+                        "nodeType": "ExpressionStatement",
+                        "src": "640:85:1"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 275,
+                      "name": "adaptorRegistry",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 237,
+                      "src": "752:15:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_mapping$_t_uint256_$_t_address_$",
+                        "typeString": "mapping(uint256 => address)"
+                      }
+                    },
+                    "id": 277,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 276,
+                      "name": "_creditTypeID",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 249,
+                      "src": "768:13:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "752:30:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 253,
+                  "id": 278,
+                  "nodeType": "Return",
+                  "src": "745:37:1"
+                }
+              ]
+            },
+            "documentation": "@dev Factory contract deploys ERC20Adaptor contract \n@param _creditTypeID The type id of credit \n@return ERC20Adaptor's address",
+            "id": 280,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deployAdaptor",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 250,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 249,
+                  "name": "_creditTypeID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 280,
+                  "src": "518:21:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 248,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "518:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "517:23:1"
+            },
+            "returnParameters": {
+              "id": 253,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 252,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 280,
+                  "src": "557:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 251,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "557:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "556:9:1"
+            },
+            "scope": 281,
+            "src": "495:294:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 282,
+        "src": "115:676:1"
+      }
+    ],
+    "src": "0:792:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.19",
+  "updatedAt": "2020-04-10T11:26:20.485Z",
+  "devdoc": {
+    "methods": {
+      "deployAdaptor(uint256)": {
+        "details": "Factory contract deploys ERC20Adaptor contract ",
+        "params": {
+          "_creditTypeID": "The type id of credit "
+        },
+        "return": "ERC20Adaptor's address"
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

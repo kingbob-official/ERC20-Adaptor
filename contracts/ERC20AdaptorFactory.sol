@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
 import "./ERC20Adaptor.sol";
-import "@Evrynetlabs/credit-contract/contracts/EER2B.sol";
+import "@evrynetlabs/credit-contract/contracts/EER2B.sol";
 
 
 contract ERC20AdaptorFactory {
