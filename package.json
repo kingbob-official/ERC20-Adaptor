@@ -1,5 +1,5 @@
 {
-  "name": "@evrynetlabs/ERC20-Adaptor",
+  "name": "@evrynetlabs/erc20-adaptor",
   "version": "1.0.1",
   "files": [
     "/contracts/**/*",
