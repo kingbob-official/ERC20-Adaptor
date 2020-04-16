@@ -6,6 +6,7 @@ import "./utils/ThrowProxy.sol";
 import "truffle/Assert.sol";
 import "@evrynetlabs/credit-contract/contracts/EER2B.sol";
 
+
 contract TestAdaptorFactory {
     uint256 private fungibleCreditTypeID;
     uint256 private nonFungibleCreditTypeID;

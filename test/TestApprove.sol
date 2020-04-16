@@ -6,6 +6,7 @@ import "./utils/ThrowProxy.sol";
 import "@evrynetlabs/credit-contract/contracts/EER2B.sol";
 import "truffle/Assert.sol";
 
+
 contract TestApprove {
     ThrowProxy private ownerAccountProxy = new ThrowProxy();
     address private ownerAccount;
@@ -25,17 +26,24 @@ contract TestApprove {
         ownerAccount = address(ownerAccountProxy);
     }
 
-    function testApprove() external{
+    function testApprove() external {
         uint256 approvedAmount = 100;
-        Assert.isZero(adaptor.allowance(ownerAccount, operatorAccount), "should not have allowances");
+        Assert.isZero(
+            adaptor.allowance(ownerAccount, operatorAccount),
+            "should not have allowances"
+        );
 
         AdaptorWrapper(ownerAccount).callApprove(operatorAccount, approvedAmount);
         (bool success, ) = ownerAccountProxy.execute(adaptorAccount);
         Assert.isTrue(success, "should not throw error approve credit to operator account");
-        Assert.equal(adaptor.allowance(ownerAccount, operatorAccount), approvedAmount, "should equal to the approved amount");
+        Assert.equal(
+            adaptor.allowance(ownerAccount, operatorAccount),
+            approvedAmount,
+            "should equal to the approved amount"
+        );
     }
 
-    function testErrorApproveToZeroAddress() external{
+    function testErrorApproveToZeroAddress() external {
         uint256 approvedAmount = 100;
         address zeroAddress = address(0);
         Assert.isZero(adaptor.allowance(ownerAccount, zeroAddress), "should not have allowances");
