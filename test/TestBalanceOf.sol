@@ -4,6 +4,7 @@ import "./../contracts/ERC20Adaptor.sol";
 import "@evrynetlabs/credit-contract/contracts/EER2B.sol";
 import "truffle/Assert.sol";
 
+
 contract TestBalanceOf {
     EER2B private credit;
     uint256 private typeID;
@@ -16,7 +17,7 @@ contract TestBalanceOf {
         adaptor = new ERC20Adaptor(address(credit), typeID);
     }
 
-    function testBalanceOf() external{
+    function testBalanceOf() external {
         uint256 expectedAmount = 1000;
         address fooAccount = address(1);
         address[] memory tos = new address[](1);
@@ -27,6 +28,10 @@ contract TestBalanceOf {
         Assert.equal(adaptor.balanceOf(fooAccount), 0, "account balance should be zero");
 
         credit.mintFungible(typeID, tos, values);
-        Assert.equal(adaptor.balanceOf(fooAccount), expectedAmount, "account balance should be increased equal to the minted amount");
+        Assert.equal(
+            adaptor.balanceOf(fooAccount),
+            expectedAmount,
+            "account balance should be increased equal to the minted amount"
+        );
     }
 }

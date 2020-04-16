@@ -6,6 +6,7 @@ import "./utils/PayableThrowProxy.sol";
 import "@evrynetlabs/credit-contract/contracts/EER2B.sol";
 import "truffle/Assert.sol";
 
+
 contract TestTransfer {
     PayableThrowProxy private senderAccountProxy = new PayableThrowProxy();
     address private senderAccount;
@@ -35,7 +36,7 @@ contract TestTransfer {
         Assert.isTrue(success, "should not throw error setting approval to the adaptor contract");
     }
 
-    function testTransfer() external{
+    function testTransfer() external {
         uint256 fooBalance = adaptor.balanceOf(senderAccount);
         uint256 barBalance = adaptor.balanceOf(recipientAccount);
         uint256 transferredAmount = 20;
@@ -44,7 +45,15 @@ contract TestTransfer {
         AdaptorWrapper(senderAccount).callTransfer(recipientAccount, transferredAmount);
         (bool success, ) = senderAccountProxy.execute(adaptorAccount);
         Assert.isTrue(success, "should not throw error transferring credit to account");
-        Assert.equal(adaptor.balanceOf(senderAccount), fooBalance - transferredAmount, "foo balance should decreased by the transferred amount");
-        Assert.equal(adaptor.balanceOf(recipientAccount), barBalance + transferredAmount, "bar balance should increased by the transferred amount");
+        Assert.equal(
+            adaptor.balanceOf(senderAccount),
+            fooBalance - transferredAmount,
+            "foo balance should decreased by the transferred amount"
+        );
+        Assert.equal(
+            adaptor.balanceOf(recipientAccount),
+            barBalance + transferredAmount,
+            "bar balance should increased by the transferred amount"
+        );
     }
 }

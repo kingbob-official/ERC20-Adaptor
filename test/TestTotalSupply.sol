@@ -4,6 +4,7 @@ import "./../contracts/ERC20Adaptor.sol";
 import "@evrynetlabs/credit-contract/contracts/EER2B.sol";
 import "truffle/Assert.sol";
 
+
 contract TestTotalSupply {
     EER2B private credit;
     uint256 private typeID;
@@ -16,7 +17,7 @@ contract TestTotalSupply {
         adaptor = new ERC20Adaptor(address(credit), typeID);
     }
 
-    function testTotalSupply() external{
+    function testTotalSupply() external {
         uint256 expectedAmount = 1000;
         address fooAccount = address(1);
         address[] memory tos = new address[](1);
@@ -27,6 +28,10 @@ contract TestTotalSupply {
         Assert.equal(adaptor.totalSupply(), 0, "total supply should be zero");
 
         credit.mintFungible(typeID, tos, values);
-        Assert.equal(adaptor.totalSupply(), expectedAmount, "total supply should be increased equal to the minted amount");
+        Assert.equal(
+            adaptor.totalSupply(),
+            expectedAmount,
+            "total supply should be increased equal to the minted amount"
+        );
     }
 }
