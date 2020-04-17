@@ -5,6 +5,7 @@ import "./utils/ThrowProxy.sol";
 import "@evrynetlabs/credit-contract/contracts/EER2B.sol";
 import "truffle/Assert.sol";
 
+
 contract AdaptorFactory {
     address creditAccount;
 
@@ -16,6 +17,7 @@ contract AdaptorFactory {
         new ERC20Adaptor(creditAccount, _typeID);
     }
 }
+
 
 contract TestDeployment {
     uint256 private fungibleCreditTypeID;

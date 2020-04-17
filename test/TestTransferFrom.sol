@@ -6,6 +6,7 @@ import "./utils/PayableThrowProxy.sol";
 import "@evrynetlabs/credit-contract/contracts/EER2B.sol";
 import "truffle/Assert.sol";
 
+
 contract TestTransferFrom {
     PayableThrowProxy private operatorAccountProxy = new PayableThrowProxy();
     PayableThrowProxy private senderAccountProxy = new PayableThrowProxy();
@@ -38,13 +39,17 @@ contract TestTransferFrom {
         Assert.isTrue(success, "should not throw error setting approval to the adaptor contract");
     }
 
-    function testTransferFromSuccess() external{
+    function testTransferFromSuccess() external {
         // approve fooAccount to operate over barAccount
         uint256 approvedAmount = 100;
         AdaptorWrapper(senderAccount).callApprove(operatorAccount, approvedAmount);
         (bool success, ) = senderAccountProxy.execute(adaptorAccount);
         Assert.isTrue(success, "should not throw error transferring credit to account");
-        Assert.equal(adaptor.allowance(senderAccount, operatorAccount), approvedAmount, "should equal to the approved amount");
+        Assert.equal(
+            adaptor.allowance(senderAccount, operatorAccount),
+            approvedAmount,
+            "should equal to the approved amount"
+        );
 
         uint256 transferredAmount = 30;
         uint256 senderBalance = adaptor.balanceOf(senderAccount);
@@ -52,28 +57,52 @@ contract TestTransferFrom {
         Assert.isAtLeast(senderBalance, transferredAmount, "sender should have enough balance");
         Assert.isAtLeast(approvedAmount, transferredAmount, "should approved enough balance");
 
-        AdaptorWrapper(operatorAccount).callTransferFrom(senderAccount, recipientAccount, transferredAmount);
+        AdaptorWrapper(operatorAccount).callTransferFrom(
+            senderAccount,
+            recipientAccount,
+            transferredAmount
+        );
         (success, ) = operatorAccountProxy.execute(adaptorAccount);
         Assert.isTrue(success, "should not throw error transferring credit to account");
-        Assert.equal(adaptor.balanceOf(senderAccount), senderBalance - transferredAmount, "sender balance should decreased by the transferred amount");
-        Assert.equal(adaptor.balanceOf(recipientAccount), recipientBalance + transferredAmount, "recipient balance should increased by the transferred amount");
-        Assert.equal(adaptor.allowance(senderAccount, operatorAccount), approvedAmount - transferredAmount, "approved amount should decrease by the transferred amount");
+        Assert.equal(
+            adaptor.balanceOf(senderAccount),
+            senderBalance - transferredAmount,
+            "sender balance should decreased by the transferred amount"
+        );
+        Assert.equal(
+            adaptor.balanceOf(recipientAccount),
+            recipientBalance + transferredAmount,
+            "recipient balance should increased by the transferred amount"
+        );
+        Assert.equal(
+            adaptor.allowance(senderAccount, operatorAccount),
+            approvedAmount - transferredAmount,
+            "approved amount should decrease by the transferred amount"
+        );
     }
 
-    function testErrorInsufficientApprovedAmount() external{
+    function testErrorInsufficientApprovedAmount() external {
         // approve fooAccount to operate over barAccount
         uint256 approvedAmount = 10;
         AdaptorWrapper(senderAccount).callApprove(operatorAccount, approvedAmount);
         (bool success, ) = senderAccountProxy.execute(adaptorAccount);
         Assert.isTrue(success, "should not throw error transferring credit to account");
-        Assert.equal(adaptor.allowance(senderAccount, operatorAccount), approvedAmount, "should equal to the approved amount");
+        Assert.equal(
+            adaptor.allowance(senderAccount, operatorAccount),
+            approvedAmount,
+            "should equal to the approved amount"
+        );
 
         uint256 transferredAmount = 30;
         uint256 senderBalance = adaptor.balanceOf(senderAccount);
         Assert.isAtLeast(senderBalance, transferredAmount, "sender should have enough balance");
         Assert.isBelow(approvedAmount, transferredAmount, "should approved insufficient balance");
 
-        AdaptorWrapper(operatorAccount).callTransferFrom(senderAccount, recipientAccount, transferredAmount);
+        AdaptorWrapper(operatorAccount).callTransferFrom(
+            senderAccount,
+            recipientAccount,
+            transferredAmount
+        );
         (success, ) = operatorAccountProxy.execute(adaptorAccount);
         Assert.isFalse(success, "should throw error transferring credit to account");
     }
