@@ -7,7 +7,7 @@ pipeline {
         ).trim()
         dockerTag="${env.branchName}-${env.BUILD_NUMBER}"
         dockerImage="${env.CONTAINER_IMAGE}:${env.dockerTag}"
-        appName="ERC20-Adapter"
+        appName="ERC20-Adaptor"
         githubUsername="Evrynetlabs"
 
         status_failure="{\"state\": \"failure\",\"context\": \"continuous-integration/jenkins\", \"description\": \"Jenkins\", \"target_url\": \"${BUILD_URL}\"}"
